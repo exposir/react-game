@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ContentPage from "./pages/ContentPage";
 
 const THEME_COLOR = "indigo-600";
 const TEXT_COLOR = "text-white";
@@ -18,6 +19,11 @@ const Header = () => (
         <li>
           <Link className={`${TEXT_COLOR} hover:underline`} to="/">
             Home
+          </Link>
+        </li>
+        <li>
+          <Link className={`${TEXT_COLOR} hover:underline`} to="/content">
+            Content
           </Link>
         </li>
         <li>
@@ -52,6 +58,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/content" element={<ContentPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
