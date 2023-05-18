@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
@@ -57,20 +58,23 @@ const Layout = ({ children }: { children: ReactNode }) => (
 );
 
 const App = () => (
-  <Router>
-    <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/content/*" element={<ContentPage />}>
-          <Route index element={<ContentHome />} />
-          <Route path="about" element={<ContentAbout />} />
-          <Route path="contact" element={<ContentContact />} />
-        </Route>
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Layout>
-  </Router>
+  <>
+    <Analytics />
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/content/*" element={<ContentPage />}>
+            <Route index element={<ContentHome />} />
+            <Route path="about" element={<ContentAbout />} />
+            <Route path="contact" element={<ContentContact />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Layout>
+    </Router>
+  </>
 );
 
 export default App;
