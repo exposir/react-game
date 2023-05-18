@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/react";
 
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
@@ -59,7 +58,6 @@ const Layout = ({ children }: { children: ReactNode }) => (
 
 const App = () => (
   <>
-    <Analytics />
     <Router>
       <Layout>
         <Routes>
