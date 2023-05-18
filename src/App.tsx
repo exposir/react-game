@@ -18,7 +18,7 @@ const Header = () => (
   <header
     className={`bg-${THEME_COLOR} ${TEXT_COLOR} p-4 md:p-8 shadow-md flex justify-between items-center`}
   >
-    <h1 className="text-2xl md:text-3xl font-bold">React Scaffold</h1>
+    <h1 className="text-2xl md:text-3xl font-bold">React game</h1>
     <nav>
       <ul className="flex space-x-4">
         <li>
