@@ -1,10 +1,19 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Outlet,
+} from "react-router-dom";
+
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ContentPage from "./pages/ContentPage";
+import ContentAbout from "./pages/ContentPage/ContentAbout";
+import ContentContact from "./pages/ContentPage/ContentContact";
+import ContentHome from "./pages/ContentPage/ContentHome";
 
 const THEME_COLOR = "indigo-600";
 const TEXT_COLOR = "text-white";
@@ -58,7 +67,11 @@ const App = () => (
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/content" element={<ContentPage />} />
+        <Route path="/content/*" element={<ContentPage />}>
+          <Route index element={<ContentHome />} />
+          <Route path="about" element={<ContentAbout />} />
+          <Route path="contact" element={<ContentContact />} />
+        </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
