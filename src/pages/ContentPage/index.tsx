@@ -53,7 +53,7 @@ const Nav = () => {
 };
 
 const Content = () => (
-  <div className="flex flex-col md:flex-row h-screen w-full">
+  <div className="flex flex-col flex-grow  md:flex-row  w-full">
     <nav className="md:w-64 md:h-full bg-gray-100 border-r-2 border-gray-200 p-4">
       <Nav />
     </nav>
